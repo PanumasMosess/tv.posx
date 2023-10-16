@@ -184,30 +184,30 @@
         window.addEventListener("load", onLoadFunction)
     </script>
     <script>
-        window.addEventListener("load", function() {
-            const panelDev = document.createElement("div");
-            panelDev.setAttribute("id", "panel-keeper");
-            panelDev.innerHTML = '<div id="theme-panel" class="panel panel-get-ready hiding-panel font-secondary"><a href="https://www.templatemonster.com/authors/goldeyes/" class="panel-button"><i class="ti-shopping-cart"></i><div>Get a copy</div></a><a href="#" class="panel-button theme-options"><i class="ti-settings"></i><div>Theme Options</div></a><a href="#support" class="panel-button"><i class="ti-email"></i><div>Get support</div></a></div><div class="panel-backdrop panel-get-ready"></div><div id="panel-switcher" class="panel-switcher panel-get-ready"><div class="loader-circle"></div><div class="loader-line-mask"><div class="loader-line"></div></div></div><style type="text/css">.panel:not(.ready),.panel-switcher:not(.ready),.panel-backdrop:not(.ready){ visibility: hidden; }</style>'
-            setTimeout(function() {
-                document.body.appendChild(panelDev);
-            }, 650);
-            setTimeout(function() {
-                const script = document.createElement('script');
-                script.src = 'theme-panel/theme-panel.js';
-                document.body.appendChild(script);
-                const link = document.createElement('link');
-                link.href = 'theme-panel/theme-panel.css';
-                link.rel = 'stylesheet';
-                document.head.appendChild(link);
-            }, 700);
-            setTimeout(function() {
-                const getReadyItems = document.querySelectorAll('.panel-get-ready');
-                for (const getReadyItem of getReadyItems) {
-                    getReadyItem.classList.add('ready');
-                    getReadyItem.classList.remove('panel-get-ready');
-                }
-            }, 1000);
-        });
+        // window.addEventListener("load", function() {
+        //     const panelDev = document.createElement("div");
+        //     panelDev.setAttribute("id", "panel-keeper");
+        //     panelDev.innerHTML = '<div id="theme-panel" class="panel panel-get-ready hiding-panel font-secondary"><a href="https://www.templatemonster.com/authors/goldeyes/" class="panel-button"><i class="ti-shopping-cart"></i><div>Get a copy</div></a><a href="#" class="panel-button theme-options"><i class="ti-settings"></i><div>Theme Options</div></a><a href="#support" class="panel-button"><i class="ti-email"></i><div>Get support</div></a></div><div class="panel-backdrop panel-get-ready"></div><div id="panel-switcher" class="panel-switcher panel-get-ready"><div class="loader-circle"></div><div class="loader-line-mask"><div class="loader-line"></div></div></div><style type="text/css">.panel:not(.ready),.panel-switcher:not(.ready),.panel-backdrop:not(.ready){ visibility: hidden; }</style>'
+        //     setTimeout(function() {
+        //         document.body.appendChild(panelDev);
+        //     }, 650);
+        //     setTimeout(function() {
+        //         const script = document.createElement('script');
+        //         script.src = 'theme-panel/theme-panel.js';
+        //         document.body.appendChild(script);
+        //         const link = document.createElement('link');
+        //         link.href = 'theme-panel/theme-panel.css';
+        //         link.rel = 'stylesheet';
+        //         document.head.appendChild(link);
+        //     }, 700);
+        //     setTimeout(function() {
+        //         const getReadyItems = document.querySelectorAll('.panel-get-ready');
+        //         for (const getReadyItem of getReadyItems) {
+        //             getReadyItem.classList.add('ready');
+        //             getReadyItem.classList.remove('panel-get-ready');
+        //         }
+        //     }, 1000);
+        // });
     </script>
 </body>
 
