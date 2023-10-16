@@ -119,6 +119,8 @@
     <script>
         function onLoadFunction(e) {
             (document.getElementById("youtubeVideo") || !1) && youtubeVideo()
+
+            console.log(window.location.host);
         }
 
         function youtubeVideo() {
