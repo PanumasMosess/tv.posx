@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107208144-1"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107208144-1"></script> -->
     <script>
-        function gtag() {
-            dataLayer.push(arguments)
-        }
-        window.dataLayer = window.dataLayer || [], gtag("js", new Date), gtag("config", "UA-107208144-1")
+        // function gtag() {
+        //     dataLayer.push(arguments)
+        // }
+        // window.dataLayer = window.dataLayer || [], gtag("js", new Date), gtag("config", "UA-107208144-1")
     </script>
     <meta charset="utf-8">
     <title>NORTH OnePage HTML Template</title>
