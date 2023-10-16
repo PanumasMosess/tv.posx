@@ -121,6 +121,7 @@
             (document.getElementById("youtubeVideo") || !1) && youtubeVideo()
 
             console.log(window.location.host);
+            console.log(location.hostname);
         }
 
         function youtubeVideo() {
