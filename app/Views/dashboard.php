@@ -114,7 +114,7 @@
         </div>
     </section> -->
     <script src="js/bs.js"></script>
-    <script src="js/plugins.min.js"></script>
+    <script src="js/plugins.min.js?v=<?= time(); ?>"></script>
     <script src="js/functions.js"></script>
     <script>
         function onLoadFunction(e) {
