@@ -143,7 +143,7 @@
      text-decoration: none;
      color: inherit;
      cursor: pointer;
-     background: none;
+     background: var(--colored);
  }
 
  * {
@@ -2358,7 +2358,7 @@
  }
 
  input.check+label span.checked {
-     opacity: 0;
+     opacity: 0.5;
      visibility: hidden;
  }
 
