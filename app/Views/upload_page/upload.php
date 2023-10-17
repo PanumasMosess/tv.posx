@@ -69,7 +69,7 @@
         }
 
         input#text_ig {
-            background-image: url('img/ig-icon.png');
+            background-image: url('/img/ig-icon.png');
             background-position: 20px 10px;
             background-repeat: no-repeat;
             background-size: 50px 50px;
