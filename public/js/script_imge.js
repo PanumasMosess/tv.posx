@@ -8,7 +8,8 @@ let result = document.querySelector(".result"),
   cropped = document.querySelector(".cropped"),
   dwn = document.querySelector(".download"),
   upload = document.querySelector("#file-input"),
-  cropper = "";
+  cropper = "",
+  imgSrc = "";
 
 // on change show image with crop options
 upload.addEventListener("change", (e) => {
@@ -41,7 +42,7 @@ upload.addEventListener("change", (e) => {
 save.addEventListener("click", (e) => {
   e.preventDefault();
   // get result to data uri
-  let imgSrc = cropper
+  imgSrc = cropper
     .getCroppedCanvas({
       width: img_w.value, // input value
     })
@@ -52,7 +53,44 @@ save.addEventListener("click", (e) => {
   img_result.classList.remove("hide");
   // show image cropped
   cropped.src = imgSrc;
+  //   console.log(imgSrc);
   //   dwn.classList.remove('hide');
   //   dwn.download = 'imagename.png';
   //   dwn.setAttribute('href', imgSrc);
 });
+
+$("#tv_form").submit(function (e) {
+  e.preventDefault();
+  arr_send = [];
+  var ig_ = $("#text_ig").val();
+  var img_64bit = imgSrc;
+  var message_ = $("#message").val();
+
+  arr_send = [
+    {
+      ig: ig_,
+      img_64bit: img_64bit,
+      message: message_,
+      table: "",
+      id_companies: "",
+    },
+  ];
+
+  $.ajax({
+    url: serverUrl + "/upload_customer",
+    method: "post",
+    data: {
+      data: arr_send,
+    },
+    cache: false,
+    success: function (response) {
+      if ((response.message = "upload_success")) {
+        alert("เสร็จสิ้น");
+        resetForm();
+      } else {
+      }
+    },
+  });
+});
+
+function resetForm() {}

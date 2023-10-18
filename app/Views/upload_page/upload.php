@@ -19,66 +19,10 @@
     <link rel="stylesheet" href="<?php echo base_url('css/style.css?v=2.0'); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.4/cropper.min.css'>
-    <style>
-        .page {
-            margin: 1em auto;
-            max-width: 768px;
-            display: flex;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            height: 100%;
-        }
-
-        .box {
-            padding: 0.5em;
-            width: 100%;
-            margin: 0.5em;
-        }
-
-        .box-2 {
-            padding: 0.5em;
-            width: 100%;
-            margin: 0.5em;
-            text-align: center;
-            /* width: calc(100%/2 - 1em); */
-        }
-
-        .options label,
-        .options input {
-            width: 4em;
-            padding: 0.5em 1em;
-        }
-
-        .btn {
-            background: white;
-            color: black;
-            border: 1px solid black;
-            padding: 0.5em 1em;
-            text-decoration: none;
-            margin: 0.8em 0.3em;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .hide {
-            display: none;
-        }
-
-        img {
-            max-width: 100%;
-        }
-
-        input#text_ig {
-            background-image: url('/img/ig-icon.png');
-            background-position: 20px 10px;
-            background-repeat: no-repeat;
-            background-size: 50px 50px;
-        }
-
-        input#text_ig:focus {
-            background-image: none;
-        }
-    </style>
+    <link rel="stylesheet" href="<?php echo base_url('css/img_crop.css?v=1.0'); ?>">
+    <script>
+        var serverUrl = '<?php echo base_url(); ?>'
+    </script>
 </head>
 
 <body class="bg-dark4">
@@ -93,7 +37,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 d-flex flex-column align-items-center t-center">
-                    <h1 class="fs-60 fs-40-sm uppercase white font-secondary">เพิ่มรูป / ข้อความ</h1>
+                    <h2 class="fs-60 fs-40-sm uppercase white font-secondary">กรุณาใส่ข้อมูลเพื่อขึ้นจอให้กับคุณ</h2>
                     <div class="width-70 height-1 my-20 bg-gray4"></div>
                 </div>
                 <div id="contact-form-container" class="col-12 mt-10 d-flex fullwidth flex-column align-items-center slow-cubic">
@@ -105,7 +49,10 @@
                                         <!-- <h2>Upload Image</h2> -->
                                         <!-- input file -->
                                         <div class="box">
-                                            <input class="py-25 px-25 b-dark fs-18 bg-dark2 white gray-placeholder mt-30" type="file" id="file-input" placeholder="เลือกรูปภาพ">
+                                            <div class="col-12 mt-15 d-flex text-center justify-content-center bg-colored-hover-upload">
+                                                <label for="file-input" class="block b-1 b-dark fullwidth font-secondary uppercase bg-dark2 bg-colored-hover-upload py-25 gray5 white-hover fs-17 slow"><i class="ti-upload"></i>&nbsp; &nbsp; เพิ่มรูปของคุณ</label>
+                                            </div>
+                                            <input type="file" id="file-input" placeholder="เลือกรูปภาพ" style="display:none;">
                                         </div>
                                         <!-- leftbox -->
                                         <div class="box-2">
@@ -118,7 +65,7 @@
                                         </div>
                                 </div>
                                 <!-- input file -->
-                                <div class="box">
+                                <div class="box text-center">
                                     <div class="options hide">
                                         <label> Width</label>
                                         <input type="number" class="img-w" value="400" min="100" max="1200" />
@@ -133,16 +80,16 @@
                             <div class="row row-eq-height">
                                 <div class="col-lg-12 col-12 relative">
                                     <div class="bg"></div>
-                                    <input type="text" name="text_ig" id="text_ig" placeholder="         ชื่อ IG ของคุณ" required="" class="py-25 px-25 b-dark fs-18 bg-dark2 white gray-placeholder mt-30 img-ig" />
+                                    <input type="text" name="text_ig" id="text_ig" placeholder="         ชื่อ IG ของคุณ" required="" class="py-25 px-25 b-dark fs-18 bg-dark2 white gray-placeholder mt-20 img-ig" />
                                     <div class="invalid-tooltip top-3 mt-0 bg-transparent p-0 text-danger fs-16 font-main">กรุณาเพิ่มไอจีของคุณ.</div>
                                 </div>
                                 <div class="col-lg-12 col-12 relative pt-30"><textarea name="message" id="message" placeholder="เพิ่มข้อความ" class="py-25 px-25 b-dark fs-18 bg-dark2 white gray-placeholder mnh-150 fullheight"></textarea>
                                     <div class="invalid-tooltip top-3 mt-0 bg-transparent p-0 text-danger fs-16 font-main"></div>
                                 </div>
-                                <div class="col-12 mt-30 d-flex justify-content-lg-end justify-content-center"><button type="submit" id="submit" class="xl-btn block b-1 b-dark fullwidth font-secondary uppercase bg-dark2 bg-colored-hover py-25 gray5 white-hover fs-17 slow">ส่งขึ้นจอ</button></div>
+                                <div class="col-12 mt-30 d-flex justify-content-lg-end justify-content-center"><button type="submit" id="submit" class="xl-btn block b-1 b-dark fullwidth font-secondary uppercase bg-dark2 bg-colored-hover py-25 gray5 white-hover fs-17 slow">สร้างข้อความ</button></div>
                             </div>
+                        </form>
                     </div>
-                    </form>
                 </div>
             </div>
         </div>

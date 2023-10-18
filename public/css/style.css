@@ -250,6 +250,10 @@
      background-color: var(--colored) !important;
  }
 
+ bg-colored-hover-upload:hover{
+    background-color: #edb4b4 !important;
+ }
+
  .bg-colored1,
  .bg-colored1-hover:hover,
  .bg-colored1-active.active,
