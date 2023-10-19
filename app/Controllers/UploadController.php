@@ -73,8 +73,8 @@ class UploadController extends BaseController
                 'table_name' => $data['table'],
                 'message' => $data['message'],
                 'status_on_tv' => 'WAIT_ON',
-                'created_by' => '',
-                'companies_id' => ''
+                'created_by' => $data['table'],
+                'companies_id' =>  $data['id_companies']
             ];
 
             $data_upload_runing = [

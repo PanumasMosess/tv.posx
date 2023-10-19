@@ -67,14 +67,20 @@ $("#tv_form").submit(function (e) {
   var img_64bit = imgSrc;
   var message_ = $("#message").val();
 
+  
+
+  var main_host = window.location.pathname;
+  let searchParams_ = main_host.split("/upload/");
+  let arr_table_compa = searchParams_[1].split("/");
+
   if (ig_ != "" && img_64bit != "") {
     arr_send = [
       {
         ig: ig_,
         img_64bit: img_64bit,
         message: message_,
-        table: "",
-        id_companies: "",
+        table: arr_table_compa[0],
+        id_companies: arr_table_compa[1],
       },
     ];
 
