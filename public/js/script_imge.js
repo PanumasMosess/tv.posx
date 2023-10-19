@@ -93,4 +93,6 @@ $("#tv_form").submit(function (e) {
   });
 });
 
-function resetForm() {}
+function resetForm() {
+    location.reload();
+}
