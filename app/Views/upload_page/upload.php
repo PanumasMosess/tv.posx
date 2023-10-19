@@ -80,7 +80,7 @@
                             <div class="row row-eq-height">
                                 <div class="col-lg-12 col-12 relative">
                                     <div class="bg"></div>
-                                    <input type="text" name="text_ig" id="text_ig" placeholder="         ชื่อ IG ของคุณ" required="" class="py-25 px-25 b-dark fs-18 bg-dark2 white gray-placeholder mt-20 img-ig" />
+                                    <input type="text" name="text_ig" id="text_ig" placeholder="         ชื่อ IG ของคุณ" required class="py-25 px-25 b-dark fs-18 bg-dark2 white gray-placeholder mt-20 img-ig" />
                                     <div class="invalid-tooltip top-3 mt-0 bg-transparent p-0 text-danger fs-16 font-main">กรุณาเพิ่มไอจีของคุณ.</div>
                                 </div>
                                 <div class="col-lg-12 col-12 relative pt-30"><textarea name="message" id="message" placeholder="เพิ่มข้อความ" class="py-25 px-25 b-dark fs-18 bg-dark2 white gray-placeholder mnh-150 fullheight"></textarea>
