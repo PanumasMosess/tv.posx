@@ -32,7 +32,9 @@ upload.addEventListener("change", (e) => {
         save.classList.remove("hide");
         // options.classList.remove('hide');
         // init cropper
-        cropper = new Cropper(img);
+        cropper = new Cropper(img, {
+            zoomable: false,
+        });
       }
     };
     reader.readAsDataURL(e.target.files[0]);
@@ -66,8 +68,6 @@ $("#tv_form").submit(function (e) {
   var ig_ = $("#text_ig").val();
   var img_64bit = imgSrc;
   var message_ = $("#message").val();
-
-  
 
   var main_host = window.location.pathname;
   let searchParams_ = main_host.split("/upload/");
