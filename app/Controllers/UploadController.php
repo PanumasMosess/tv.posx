@@ -72,6 +72,7 @@ class UploadController extends BaseController
                 'src_img' => $file_name,
                 'table_name' => $data['table'],
                 'message' => $data['message'],
+                'status_on_tv' => 'WAIT_ON',
                 'created_by' => '',
                 'companies_id' => ''
             ];
