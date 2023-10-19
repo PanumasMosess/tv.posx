@@ -61,7 +61,7 @@
                                         <!--rightbox-->
                                         <div class="box-2 img-result hide">
                                             <!-- result of crop -->
-                                            <img class="cropped" src="" alt="">
+                                            <img class="cropped" src="" alt="" >
                                         </div>
                                 </div>
                                 <!-- input file -->
