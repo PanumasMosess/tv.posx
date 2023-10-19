@@ -85,7 +85,6 @@ $("#tv_form").submit(function (e) {
     cache: false,
     success: function (response) {
       if ((response.message = "upload_success")) {
-        alert("เสร็จสิ้น");
         resetForm();
       } else {
       }
@@ -94,7 +93,6 @@ $("#tv_form").submit(function (e) {
 });
 
 function resetForm() {
-    
-    img_result.classList.remove("hide");
+    img_result.classList.add("hide");
     $("#tv_form")[0].reset();
 }
