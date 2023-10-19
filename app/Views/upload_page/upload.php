@@ -100,7 +100,7 @@
     <script src="<?php echo base_url('js/plugins.min.js?v=' . time()); ?>"></script>
     <script src="<?php echo base_url('js/functions.js'); ?>"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.js'></script>
-    <script src="<?php echo base_url('js/script_imge.js'); ?>"></script>
+    <script src="<?php echo base_url('js/script_imge.jsv=' . time()); ?>"></script>
 </body>
 
 </html>
