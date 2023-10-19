@@ -6,6 +6,8 @@ class DashBoardController extends BaseController
 {
     public function index(): string
     {
-        return view('dashboard');
+        $this->SettingTVModel = new \App\Models\SettingTVModel();
+        $data['picture_datas'] = $this->SettingTVModel->getPiture();
+        return view('dashboard', $data);
     }
 }
