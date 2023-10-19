@@ -7,5 +7,5 @@ use CodeIgniter\Router\RouteCollection;
  */
 // $routes->get('/', 'Home::index');
 $routes->get('/', 'DashBoardController::index');
-$routes->get('/upload', 'UploadController::index');
+$routes->get('/upload/(:any)', 'UploadController::index/$1');
 $routes->post('/upload_customer', 'UploadController::inert_message');
