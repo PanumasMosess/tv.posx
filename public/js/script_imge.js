@@ -8,6 +8,7 @@ let result = document.querySelector(".result"),
   cropped = document.querySelector(".cropped"),
   dwn = document.querySelector(".download"),
   upload = document.querySelector("#file-input"),
+  form_upload = document.querySelector("#tv_form"),
   cropper = "",
   imgSrc = "";
 
@@ -66,33 +67,38 @@ $("#tv_form").submit(function (e) {
   var img_64bit = imgSrc;
   var message_ = $("#message").val();
 
-  arr_send = [
-    {
-      ig: ig_,
-      img_64bit: img_64bit,
-      message: message_,
-      table: "",
-      id_companies: "",
-    },
-  ];
+  if (ig_ != "" && img_64bit != "") {
+    arr_send = [
+      {
+        ig: ig_,
+        img_64bit: img_64bit,
+        message: message_,
+        table: "",
+        id_companies: "",
+      },
+    ];
 
-  $.ajax({
-    url: serverUrl + "upload_customer",
-    method: "post",
-    data: {
-      data: arr_send,
-    },
-    cache: false,
-    success: function (response) {
-      if ((response.message = "upload_success")) {
-        resetForm();
-      } else {
-      }
-    },
-  });
+    $.ajax({
+      url: serverUrl + "upload_customer",
+      method: "post",
+      data: {
+        data: arr_send,
+      },
+      cache: false,
+      success: function (response) {
+        if ((response.message = "upload_success")) {
+          resetForm();
+        } else {
+        }
+      },
+    });
+  } else {
+    alert("กรุณากรอกข้อมูล");
+  }
 });
 
 function resetForm() {
-    img_result.classList.add("hide");
-    $("#tv_form")[0].reset();
+  img_result.classList.add("hide");
+  form_upload.classList.remove("was-validated");
+  $("#tv_form")[0].reset();
 }
