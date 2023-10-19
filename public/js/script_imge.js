@@ -94,5 +94,7 @@ $("#tv_form").submit(function (e) {
 });
 
 function resetForm() {
-    location.reload();
+    
+    img_result.classList.remove("hide");
+    $("#tv_form")[0].reset();
 }
