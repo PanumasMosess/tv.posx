@@ -77,7 +77,7 @@ $("#tv_form").submit(function (e) {
   ];
 
   $.ajax({
-    url: serverUrl + "/upload_customer",
+    url: serverUrl + "upload_customer",
     method: "post",
     data: {
       data: arr_send,
