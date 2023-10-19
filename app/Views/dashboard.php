@@ -17,6 +17,9 @@
     <!-- <link rel="apple-touch-icon" href="images/apple-touch-icon.png"> -->
     <link rel="stylesheet" href="css/plugins.min.css">
     <link rel="stylesheet" href="css/style.css?v=2.0">
+    <script>
+        var serverUrl = '<?php echo base_url(); ?>'
+    </script>
 </head>
 
 <body class="bg-dark4">
@@ -28,8 +31,17 @@
         </div>
     </div>
     <div id="home" class="relative white height-100vh bg-dark4 has-parallax mnh-600 align-items-center d-flex hover-container">
-        <div id="home-background-slider" class="bg-slider custom-slider zi-1" data-slick='{"speed": 900, "autoplaySpeed": 5000, "autoplay": true }'>
-            <div class="slide has-parallax">
+        <div id="home-background-slider" class="bg-slider custom-slider zi-1" data-slick='{"speed": 900, "autoplaySpeed": 9000, "autoplay": true }'>
+            <?php if ($picture_datas) : ?>
+                <?php $i = 0 ?>
+                <?php foreach ($picture_datas as $picture_data) : ?>
+                    <?php $i++ ?>
+                    <div class="slide has-parallax">
+                        <div class="parallax bg-bottom bg-soft-6" data-anchor-target="#home" data-bottom-top="transform:translate3d(0, -200px, 0px);" data-top-bottom="transform:translate3d(0px, 200px, 0px);" data-bg="<?php echo 'https://app.posx.co/uploads/tv_background/' . $picture_data->picture_src; ?>"></div>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
+            <!-- <div class="slide has-parallax">
                 <div class="parallax bg-bottom bg-soft-6 bg-soft-black" data-anchor-target="#home" data-bottom-top="transform:translate3d(0, -200px, 0px);" data-top-bottom="transform:translate3d(0px, 200px, 0px);" data-bg="images/background_07.jpg"></div>
             </div>
             <div class="slide has-parallax">
@@ -37,7 +49,7 @@
             </div>
             <div class="slide has-parallax">
                 <div class="parallax bg-bottom bg-soft-6 bg-soft-black bg-pattern" data-anchor-target="#home" data-bottom-top="transform:translate3d(0, -200px, 0px);" data-top-bottom="transform:translate3d(0px, 200px, 0px);" data-bg="images/background_09.jpg"></div>
-            </div>
+            </div> -->
         </div>
         <div class="fai hidden-xs d-flex zi-10 justify-content-between align-items-center"><button type="button" class="icon-md width-45 width-25-sm height-65 height-50-sm bg-soft-0 bg-soft-4-item bg-soft-dark3 bg-dark3-hover gray4 fs-25 fs-15-sm slow pointer-events-all" data-slider-control="#home-background-slider" data-slider-dir="prev"><i class="ti-angle-left"></i></button><button type="button" class="icon-md width-45 width-25-sm height-65 height-50-sm ml-auto bg-soft-0 bg-soft-4-item bg-soft-dark3 bg-dark3-hover gray4 fs-25 fs-15-sm slow pointer-events-all" data-slider-control="#home-background-slider" data-slider-dir="next"><i class="ti-angle-right"></i></button></div>
         <div class="fai d-flex align-items-center justify-content-center zi-5">
