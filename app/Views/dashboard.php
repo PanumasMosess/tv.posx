@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="css/style.css?v=2.0">
     <script>
         var serverUrl = '<?php echo base_url(); ?>'
+        var companies_id = '<?php echo $companies_id; ?>'
+        console.log(companies_id);
     </script>
 </head>
 
@@ -223,10 +225,11 @@
         //         }
         //     }, 1000);
         // });
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const companies_id = urlParams.get('compa')
-        console.log(companies_id);
+        // const queryString = window.location.search;
+        // const urlParams = new URLSearchParams(queryString);
+        // const companies_id = urlParams.get('compa')
+        // console.log(companies_id);
     </script>
 </body>
+
 </html>
