@@ -223,6 +223,10 @@
         //         }
         //     }, 1000);
         // });
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const companies_id = urlParams.get('compa')
+        console.log(companies_id);
     </script>
 </body>
 </html>
