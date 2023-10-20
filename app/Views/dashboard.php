@@ -19,8 +19,6 @@
     <link rel="stylesheet" href="css/style.css?v=2.0">
     <script>
         var serverUrl = '<?php echo base_url(); ?>'
-        var companies_id = '<?php echo $companies_id; ?>'
-        console.log(companies_id);
     </script>
 </head>
 
@@ -133,9 +131,8 @@
     <script>
         function onLoadFunction(e) {
             (document.getElementById("youtubeVideo") || !1) && youtubeVideo()
-
-            console.log(window.location.host);
-            console.log(location.hostname);
+            var companies_id = '<?php echo $companies_id; ?>'
+            console.log(companies_id);
         }
 
         function youtubeVideo() {
