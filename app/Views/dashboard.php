@@ -131,8 +131,6 @@
     <script>
         function onLoadFunction(e) {
             (document.getElementById("youtubeVideo") || !1) && youtubeVideo()
-            var companies_id = '<?php echo $companies_id; ?>'
-            console.log(companies_id);
         }
 
         function youtubeVideo() {
