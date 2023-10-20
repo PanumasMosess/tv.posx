@@ -8,6 +8,7 @@ class DashBoardController extends BaseController
     {
         $this->SettingTVModel = new \App\Models\SettingTVModel();
         $data['picture_datas'] = $this->SettingTVModel->getPiture();
+        $data['companies_id'] = $_GET['compa'] ?? '0';
         return view('dashboard', $data);
     }
 }
