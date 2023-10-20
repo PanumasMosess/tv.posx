@@ -16,7 +16,7 @@ class UploadController extends BaseController
         $this->UploadModel = new \App\Models\UploadModel();
     }
 
-    public function index(): string
+    public function index()
     {
         return view('upload_page/upload');
     }

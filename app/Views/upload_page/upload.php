@@ -2,13 +2,6 @@
 <html lang="en">
 
 <head>
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107208144-1"></script> -->
-    <script>
-        // function gtag() {
-        //     dataLayer.push(arguments)
-        // }
-        // window.dataLayer = window.dataLayer || [], gtag("js", new Date), gtag("config", "UA-107208144-1")
-    </script>
     <meta charset="utf-8">
     <title>TV POSX</title>
     <meta name="description" content="">
@@ -21,7 +14,7 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.4/cropper.min.css'>
     <link rel="stylesheet" href="<?php echo base_url('css/img_crop.css?v=1.0'); ?>">
     <script>
-        var serverUrl = '<?php echo base_url(); ?>'
+        var serverUrl = '<?php echo base_url(); ?>';
     </script>
 </head>
 
@@ -46,36 +39,27 @@
                             <div class="container-fluid px-0">
                                 <div class="col-lg-12 col-12 relative">
                                     <main class="page">
-                                        <!-- <h2>Upload Image</h2> -->
-                                        <!-- input file -->
                                         <div class="box">
                                             <div class="col-12 mt-15 d-flex text-center justify-content-center bg-colored-hover-upload">
                                                 <label for="file-input" class="block b-1 b-dark fullwidth font-secondary uppercase bg-dark2 bg-colored-hover-upload py-25 gray5 white-hover fs-17 slow"><i class="ti-upload"></i>&nbsp; &nbsp; เพิ่มรูปของคุณ</label>
                                             </div>
                                             <input type="file" id="file-input" placeholder="เลือกรูปภาพ" style="display:none;">
                                         </div>
-                                        <!-- leftbox -->
                                         <div class="box-2">
                                             <div class="result"></div>
                                         </div>
-                                        <!--rightbox-->
                                         <div class="box-2 img-result hide">
-                                            <!-- result of crop -->
-                                            <img class="cropped" src="" alt="" >
+                                            <img class="cropped" src="" alt="">
                                         </div>
+                                        <div class="box text-center">
+                                            <div class="options hide">
+                                                <label> Width</label>
+                                                <input type="number" class="img-w" value="400" min="100" max="1200" />
+                                            </div>
+                                            <button class="btn save hide">บันทึกขนาดรูป</button>
+                                        </div>
+                                    </main>
                                 </div>
-                                <!-- input file -->
-                                <div class="box text-center">
-                                    <div class="options hide">
-                                        <label> Width</label>
-                                        <input type="number" class="img-w" value="400" min="100" max="1200" />
-                                    </div>
-                                    <!-- save btn -->
-                                    <button class="btn save hide">บันทึกขนาดรูป</button>
-                                    <!-- download btn -->
-                                    <!-- <a href="" class="btn download hide">Download</a> -->
-                                </div>
-                                </main>
                             </div>
                             <div class="row row-eq-height">
                                 <div class="col-lg-12 col-12 relative">
@@ -93,12 +77,11 @@
                 </div>
             </div>
         </div>
-        </div>
     </section>
 
-    <script src="<?php echo base_url('js/bs.js'); ?>"></script>
+    <script src="<?php echo base_url('js/bs.js?v=' . time()); ?>"></script>
     <script src="<?php echo base_url('js/plugins.min.js?v=' . time()); ?>"></script>
-    <script src="<?php echo base_url('js/functions.js'); ?>"></script>
+    <script src="<?php echo base_url('js/functions.js?v=' . time()); ?>"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.js'></script>
     <script src="<?php echo base_url('js/script_imge.js?v=' . time()); ?>"></script>
 </body>
