@@ -43,7 +43,7 @@
                                             <div class="col-12 mt-15 d-flex text-center justify-content-center bg-colored-hover-upload">
                                                 <label for="file-input" class="block b-1 b-dark fullwidth font-secondary uppercase bg-dark2 bg-colored-hover-upload py-25 gray5 white-hover fs-17 slow"><i class="ti-upload"></i>&nbsp; &nbsp; เพิ่มรูปของคุณ</label>
                                             </div>
-                                            <input type="file" id="file-input" placeholder="เลือกรูปภาพ" style="display:none;">
+                                            <input type="file" id="file-input" accept="image/png, image/gif, image/jpeg" placeholder="เลือกรูปภาพ" style="display:none;">
                                         </div>
                                         <div class="box-2">
                                             <div class="result"></div>
