@@ -125,9 +125,9 @@
             </div>
         </div>
     </section> -->
-    <script src="js/bs.js"></script>
+    <script src="js/bs.js?v=<?= time(); ?>"></script>
     <script src="js/plugins.min.js?v=<?= time(); ?>"></script>
-    <script src="js/functions.js"></script>
+    <script src="js/functions.js?v=<?= time(); ?>"></script>
     <script>
         function onLoadFunction(e) {
             (document.getElementById("youtubeVideo") || !1) && youtubeVideo()
@@ -225,5 +225,4 @@
         // });
     </script>
 </body>
-
 </html>
