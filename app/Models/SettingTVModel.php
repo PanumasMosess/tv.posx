@@ -14,10 +14,10 @@ class SettingTVModel
         $this->db = &$db;
     }
 
-    public function getPiture()
+    public function getPiture($companies_id)
     {
         // $companies_id = session()->get('companies_id');
-        $sql = "SELECT * FROM  posx_tv_background WHERE (companies_id = '1')";
+        $sql = "SELECT * FROM  posx_tv_background WHERE (companies_id = '$companies_id')";
 
         $builder = $this->db->query($sql);
         return $builder->getResult();
