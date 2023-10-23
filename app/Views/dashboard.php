@@ -19,6 +19,13 @@
     <link rel="stylesheet" href="css/style.css?v=2.0">
     <script>
         var serverUrl = '<?php echo base_url(); ?>'
+        var split_host = '';
+        if (serverUrl != "http://localhost:8080/") {
+            let split_hostA = serverUrl.split("https://tv.");
+            split_host = "https://app." + split_hostA;
+        } else {
+            split_host = serverUrl;
+        }
     </script>
 </head>
 
@@ -37,7 +44,17 @@
                 <?php foreach ($picture_datas as $picture_data) : ?>
                     <?php $i++ ?>
                     <div class="slide has-parallax">
-                        <div class="parallax bg-bottom bg-soft-6" data-anchor-target="#home" data-bottom-top="transform:translate3d(0, -200px, 0px);" data-top-bottom="transform:translate3d(0px, 200px, 0px);" data-bg="<?php echo 'https://app.posx.co/uploads/tv_background/' . $picture_data->picture_src; ?>"></div>
+                        <div class="parallax bg-bottom bg-soft-6" data-anchor-target="#home" data-bottom-top="transform:translate3d(0, -200px, 0px);" data-top-bottom="transform:translate3d(0px, 200px, 0px);" data-bg="<?php
+                                                                                                                                                                                                                            $new_link = base_url();
+                                                                                                                                                                                                                            $new_link2 = "";
+                                                                                                                                                                                                                            if (base_url() != 'http://localhost:8080/') {
+                                                                                                                                                                                                                                $new_link1 = explode("https://tv.", $new_link);
+                                                                                                                                                                                                                                $new_link2 =  "https://app." . $new_link1[1];
+                                                                                                                                                                                                                            }else{
+                                                                                                                                                                                                                                $new_link2 = base_url();
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                           
+                                                                                                                                                                                                                            echo $new_link2 . 'uploads/tv_background/' . $picture_data->picture_src; ?>"></div>
                     </div>
                 <?php endforeach; ?>
             <?php endif; ?>
@@ -53,26 +70,13 @@
         </div>
         <div class="fai hidden-xs d-flex zi-10 justify-content-between align-items-center"><button type="button" class="icon-md width-45 width-25-sm height-65 height-50-sm bg-soft-0 bg-soft-4-item bg-soft-dark3 bg-dark3-hover gray4 fs-25 fs-15-sm slow pointer-events-all" data-slider-control="#home-background-slider" data-slider-dir="prev"><i class="ti-angle-left"></i></button><button type="button" class="icon-md width-45 width-25-sm height-65 height-50-sm ml-auto bg-soft-0 bg-soft-4-item bg-soft-dark3 bg-dark3-hover gray4 fs-25 fs-15-sm slow pointer-events-all" data-slider-control="#home-background-slider" data-slider-dir="next"><i class="ti-angle-right"></i></button></div>
         <div class="fai d-flex align-items-center justify-content-center zi-5">
-            <!-- <div class="container pointer-events-all">
+            <div class="container pointer-events-all">
                 <div class="row t-center">
                     <div class="col-12">
-                        <div id="home-title-slider" class="custom-slider" data-slick='{"autoplay": true, "autoplaySpeed": 3000, "speed":700}'>
-                            <div class="slide">
-                                <h1 class="font-tertiary semibold uppercase fs-60 fs-30-sm lh-60 lh-35-sm">WE CREATE AWESOME THEMES!</h1>
-                            </div>
-                            <div class="slide">
-                                <h1 class="font-tertiary semibold uppercase fs-60 fs-30-sm lh-60 lh-35-sm">WE ARE CREATIVE DESIGNERS</h1>
-                            </div>
-                            <div class="slide">
-                                <h1 class="font-tertiary semibold uppercase fs-60 fs-30-sm lh-60 lh-35-sm">WE LOVE TO DESIGN</h1>
-                            </div>
-                        </div>
-                        <h3 class="gray2 fs-22 fs-17-sm lh-30 lh-25-sm mt-10">Welcome to<span class="gray5">North!</span>We love to design. We are happy with<span class="gray5">you are!</span></h3>
-                        <div class="d-flex justify-content-center mt-15"><button type="button" class="icon-md width-40 height-40 mx-5 circle bg-dark9 white opacity-3 opacity-10-hover fs-21 slow" data-slider-control="#home-title-slider" data-slider-dir="prev"><i class="ti-angle-left"></i></button><button type="button" class="icon-md width-40 height-40 mx-5 circle bg-dark9 white opacity-3 opacity-10-hover fs-21 slow" data-slider-control="#home-title-slider" data-slider-dir="next"><i class="ti-angle-right"></i></button></div>
-                        <div class="mt-15"><a href="https://themeforest.net/item/north-one-page-parallax-theme/7943169" target="_blank" class="btn-sm gray3 fs-15 lh-12 bg-soft-5 mx-10 bg-soft-0-hover bg-soft-dark7 b-1 b-soft-white1 b-colored-hover uppercase medium font-secondary bg-colored-hover white slow"><span>Purchase</span></a><a href="#fashion" target="_blank" class="btn-sm gray3 fs-15 lh-12 bg-soft-5 mx-10 bg-soft-0-hover bg-soft-dark7 b-1 b-soft-white1 b-colored-hover uppercase medium font-secondary bg-colored-hover white slow"><span>Read More</span></a></div>
+
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
     <!-- <section id="testimonials-1512324" class="has-parallax pt-120 pb-110 bg-soft-85 bg-soft-dark3">
