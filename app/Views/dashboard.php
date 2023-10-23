@@ -19,13 +19,6 @@
     <link rel="stylesheet" href="css/style.css?v=2.0">
     <script>
         var serverUrl = '<?php echo base_url(); ?>'
-        var split_host = '';
-        if (serverUrl != "http://localhost:8080/") {
-            let split_hostA = serverUrl.split("https://tv.");
-            split_host = "https://app." + split_hostA;
-        } else {
-            split_host = serverUrl;
-        }
     </script>
 </head>
 
@@ -50,10 +43,10 @@
                                                                                                                                                                                                                             if (base_url() != 'http://localhost:8080/') {
                                                                                                                                                                                                                                 $new_link1 = explode("https://tv.", $new_link);
                                                                                                                                                                                                                                 $new_link2 =  "https://app." . $new_link1[1];
-                                                                                                                                                                                                                            }else{
+                                                                                                                                                                                                                            } else {
                                                                                                                                                                                                                                 $new_link2 = base_url();
                                                                                                                                                                                                                             }
-                                                                                                                                                                                                                           
+
                                                                                                                                                                                                                             echo $new_link2 . 'uploads/tv_background/' . $picture_data->picture_src; ?>"></div>
                     </div>
                 <?php endforeach; ?>
@@ -73,7 +66,9 @@
             <div class="container pointer-events-all">
                 <div class="row t-center">
                     <div class="col-12">
+                        <div id="img_ig" class="isotope grid-layout row row-cols-xl-5 row-cols-lg-3 row-cols-md-3 row-cols-sm-3 row-cols-xs-1" data-default-filter="" style="position: relative; height: 595.5px;"><a href="images/portfolio/001b.jpg" data-fslightbox="portfolio" data-type="image" class="branding item col p-0" style="position: absolute; left: 0px; top: 0px;">
 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -228,6 +223,11 @@
         // const urlParams = new URLSearchParams(queryString);
         // const companies_id = urlParams.get('compa')
         // console.log(companies_id);
+    </script>
+    <script>
+        $(document).ready(function () {
+            
+        });
     </script>
 </body>
 

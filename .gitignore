@@ -127,3 +127,4 @@ nb-configuration.xml
 /.phpunit.*.cache
 
 public/uploads/customer_img/*
+public/uploads/tv_background/*
