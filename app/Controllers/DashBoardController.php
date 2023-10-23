@@ -12,4 +12,16 @@ class DashBoardController extends BaseController
         
         return view('dashboard', $data);
     }
+
+    public function IG()
+    {
+        $data_id = $_GET['compa'] ?? '0';
+        $data = $this->SettingTVModel->getPiture($data_id);
+       
+        return $this->response->setJSON([
+            'status' => 200,
+            'error' => false,
+            'data' => $data
+        ]);
+    }
 }

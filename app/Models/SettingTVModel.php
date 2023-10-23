@@ -30,4 +30,12 @@ class SettingTVModel
         $builder = $this->db->query($sql);
         return $builder->getRow();
     }
+
+    public function getIG($companies_id)
+    {
+        $sql = "SELECT * FROM  posx_tv WHERE (companies_id = '$companies_id') AND status_on_tv = 'WAIT_ON' ORDER BY ID ASC LIMIT 1";
+
+        $builder = $this->db->query($sql);
+        return $builder->getRow();
+    }
 }
