@@ -174,20 +174,20 @@
 
         });
 
-        function loadTime() { 
-            clearInterval();           
+        function loadTime() {
+            clearInterval();
             $.ajax({
                 url: serverUrl + "time_get/" + companies_id,
                 method: "get",
                 success: function(response) {
                     time_delay_ig = 0;
-                    time_delay_ig = parseInt(response.data.tv_time);             
-                   setInterval(loadIG, time_delay_ig  * 1000);
+                    time_delay_ig = parseInt(response.data.tv_time);
+                    setInterval(loadIG, 5000);
                 }
             });
         }
 
-        
+
 
         function loadIG() {
             if (localStorage.getItem("load_ig") == "yes") {
@@ -197,6 +197,7 @@
                     success: function(response) {
                         localStorage.setItem("load_ig", "no");
                         if ((response.data != null)) {
+                            let timer = 0;
                             $('#img_ig').html("<div class='col'>" +
                                 "<div class='box'>" +
                                 "<h2>โต๊ะ " + response.data.table_name + "</h2>" +
@@ -207,19 +208,24 @@
                                 "<h1> IG : " + response.data.ig + "</h1>" +
                                 "<p>" + response.data.message + "</p>" +
                                 "</div>");
-
-                            $.ajax({
-                                url: serverUrl + "ig_status/" + response.data.id_ig,
-                                method: "get",
-                                success: function(response_update) {
-                                    if (response_update.message = 'success') {
-                                        localStorage.setItem("load_ig", "yes");
-                                    }
-                                },
-                            });
-
+                            timer = time_delay_ig;
+                            var intervalUpdate = setInterval(function() {
+                                timer--;
+                                if (timer < 0) {
+                                    $.ajax({
+                                        url: serverUrl + "ig_status/" + response.data.id_ig,
+                                        method: "get",
+                                        success: function(response_update) {
+                                            if (response_update.message = 'success') {
+                                                localStorage.setItem("load_ig", "yes");
+                                                clearInterval(intervalUpdate);
+                                            }
+                                        },
+                                    });
+                                }
+                            }, 1000);
                         } else {
-                            localStorage.setItem("load_ig", "yes");                           
+                            localStorage.setItem("load_ig", "yes");
                             $('#img_ig').html("");
                         }
                     },
