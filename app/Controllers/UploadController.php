@@ -70,7 +70,7 @@ class UploadController extends BaseController
                 'tv_code' => $upload_running_code,
                 'ig' => $data['ig'],
                 'src_img' => $file_name,
-                'table_name' => $data['table'],
+                'table_code' => $data['table'],
                 'message' => $data['message'],
                 'status_on_tv' => 'WAIT_ON',
                 'created_by' => $data['table'],

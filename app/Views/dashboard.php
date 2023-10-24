@@ -17,8 +17,10 @@
     <!-- <link rel="apple-touch-icon" href="images/apple-touch-icon.png"> -->
     <link rel="stylesheet" href="css/plugins.min.css">
     <link rel="stylesheet" href="css/style.css?v=2.0">
+    <link rel="stylesheet" href="css/styletv.css">
     <script>
         var serverUrl = '<?php echo base_url(); ?>'
+        var companies_id = '<?php echo $_GET['compa'] ?? '0'; ?>';
     </script>
 </head>
 
@@ -47,83 +49,20 @@
                                                                                                                                                                                                                                 $new_link2 = base_url();
                                                                                                                                                                                                                             }
 
-                                                                                                                                                                                                                            echo $new_link2 . 'uploads/tv_background/' . $picture_data->picture_src; ?>"></div>
+                                                                                                                                                                                                                            echo $new_link2 . 'uploads/tv_background/' . $picture_data->picture_src; ?>">
+                        </div>
                     </div>
                 <?php endforeach; ?>
             <?php endif; ?>
-            <!-- <div class="slide has-parallax">
-                <div class="parallax bg-bottom bg-soft-6 bg-soft-black" data-anchor-target="#home" data-bottom-top="transform:translate3d(0, -200px, 0px);" data-top-bottom="transform:translate3d(0px, 200px, 0px);" data-bg="images/background_07.jpg"></div>
-            </div>
-            <div class="slide has-parallax">
-                <div class="parallax bg-bottom bg-soft-6 bg-soft-black" data-anchor-target="#home" data-bottom-top="transform:translate3d(0, -200px, 0px);" data-top-bottom="transform:translate3d(0px, 200px, 0px);" data-bg="images/background_08.jpg"></div>
-            </div>
-            <div class="slide has-parallax">
-                <div class="parallax bg-bottom bg-soft-6 bg-soft-black bg-pattern" data-anchor-target="#home" data-bottom-top="transform:translate3d(0, -200px, 0px);" data-top-bottom="transform:translate3d(0px, 200px, 0px);" data-bg="images/background_09.jpg"></div>
-            </div> -->
         </div>
         <div class="fai hidden-xs d-flex zi-10 justify-content-between align-items-center"><button type="button" class="icon-md width-45 width-25-sm height-65 height-50-sm bg-soft-0 bg-soft-4-item bg-soft-dark3 bg-dark3-hover gray4 fs-25 fs-15-sm slow pointer-events-all" data-slider-control="#home-background-slider" data-slider-dir="prev"><i class="ti-angle-left"></i></button><button type="button" class="icon-md width-45 width-25-sm height-65 height-50-sm ml-auto bg-soft-0 bg-soft-4-item bg-soft-dark3 bg-dark3-hover gray4 fs-25 fs-15-sm slow pointer-events-all" data-slider-control="#home-background-slider" data-slider-dir="next"><i class="ti-angle-right"></i></button></div>
         <div class="fai d-flex align-items-center justify-content-center zi-5">
-            <div class="container pointer-events-all">
-                <div class="row t-center">
-                    <div class="col-12">
-                        <div id="img_ig" class="isotope grid-layout row row-cols-xl-5 row-cols-lg-3 row-cols-md-3 row-cols-sm-3 row-cols-xs-1" data-default-filter="" style="position: relative; height: 595.5px;"><a href="images/portfolio/001b.jpg" data-fslightbox="portfolio" data-type="image" class="branding item col p-0" style="position: absolute; left: 0px; top: 0px;">
+            <div class="row" id="img_ig">
 
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-    <!-- <section id="testimonials-1512324" class="has-parallax pt-120 pb-110 bg-soft-85 bg-soft-dark3">
-        <div data-video-id="mSLAF_DjiDU" data-startat="22" data-endat="220" id="youtubeVideo" class="youtube-video zi-0 pointer-events-none"></div>
-        <div class="absolute fai zi-2 d-flex justify-content-center">
-            <svg width="70px" height="35px" viewBox="0 0 70 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <polygon fill="#212121" transform="translate(35.000000, 17.500000) rotate(-180.000000) translate(-35.000000, -17.500000) " points="35 1.13686838e-13 70 35 -6.82121026e-13 35"></polygon>
-                </g>
-            </svg>
-        </div>
-        <div class="container-md t-center">
-            <div class="fullwidth d-flex justify-content-center">
-                <svg width="35px" height="28px" viewBox="0 0 35 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.703170422">
-                        <path d="M2.96932021,4.00973937 C5.42379854,1.34882594 9.13788086,0 14.0066002,0 L15.7560502,0 L15.7560502,4.93169951 L14.3494924,5.21336096 C11.9527459,5.69271025 10.28552,6.6356638 9.39330056,8.01947874 C8.9277587,8.76497112 8.66372707,9.61855284 8.62704146,10.4966999 L14.0066002,10.4966999 C14.9727947,10.4966999 15.7560502,11.2799554 15.7560502,12.2461499 L15.7560502,24.4922998 C15.7560502,26.4219431 14.1867935,27.9911998 12.2571502,27.9911998 L1.76045027,27.9911998 C0.79425572,27.9911998 0.0110002824,27.2079443 0.0110002824,26.2417498 L0.0110002824,17.4944999 L0.0162486323,12.3878554 C0.000503582436,12.1936664 -0.331891915,7.59261294 2.96932021,4.00973937 Z M31.5011,27.9911998 L21.0044001,27.9911998 C20.0382056,27.9911998 19.2549501,27.2079443 19.2549501,26.2417498 L19.2549501,17.4944999 L19.2601985,12.3878554 C19.2444534,12.1936664 18.9120579,7.59261294 22.2132701,4.00973937 C24.6677484,1.34882594 28.3818307,0 33.25055,0 L35,0 L35,4.93169951 L33.5934422,5.21336096 C31.1966957,5.69271025 29.5294699,6.6356638 28.6372504,8.01947874 C28.1717085,8.76497112 27.9076769,9.61855284 27.8709913,10.4966999 L33.25055,10.4966999 C34.2167446,10.4966999 35,11.2799554 35,12.2461499 L35,24.4922998 C35,26.4219431 33.4307434,27.9911998 31.5011,27.9911998 Z" id="quote_testimonials" fill="#FFFFFF" fill-rule="nonzero"></path>
-                    </g>
-                </svg>
-            </div>
-            <div id="testimonials-slider-1512324" class="custom-slider fullwidth c-default mt-40" data-slick='{"dots": false, "speed":600, "arrows": false, "fade": true, "draggable":false, "slidesToShow": 1, "slidesToScroll": 1, "responsive":[{"breakpoint": 1350,"settings":{"slidesToShow": 1}},{"breakpoint": 1024,"settings":{"slidesToShow": 1}},{"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
-                <div class="px-30 pt-25 relative">
-                    <q cite="http://quadra.goldeyestheme.com/" class="white fs-30 fs-24-sm medium lh-40">
-                        Informed decision-making comes from a long tradition of guessing and then blaming<span class="colored">others </span>
-                        for inadequate results.
-                    </q>
-                    <h5 class="fs-14 gray3 uppercase mt-25">SCOTT ADAMS</h5>
-                </div>
-                <div class="px-30 pt-25 relative">
-                    <q cite="http://quadra.goldeyestheme.com/" class="white fs-30 fs-24-sm medium lh-40">
-                        Engineers like to solve problems. If there are<span class="colored">no problems</span>
-                        handily available, they will create their own problems.
-                    </q>
-                    <h5 class="fs-14 gray3 uppercase mt-25">SCOTT ADAMS</h5>
-                </div>
-                <div class="px-30 pt-25 relative">
-                    <q cite="http://quadra.goldeyestheme.com/" class="white fs-30 fs-24-sm medium lh-40">
-                        Remind people that profit is the difference between<span class="colored">revenue and expense.</span>
-                        This makes you look smart.
-                    </q>
-                    <h5 class="fs-14 gray3 uppercase mt-25">SCOTT ADAMS</h5>
-                </div>
-            </div>
-            <div class="col-12 d-flex justify-content-center mt-40">
-                <button type="button" class="icon-md mx-5 bg-dark1 circle white bg-colored-hover" data-slider-control="#testimonials-slider-1512324" data-slider-dir="prev">
-                    <i class="ti-angle-left"></i>
-                </button>
-                <button type="button" class="icon-md mx-5 bg-dark1 circle white bg-colored-hover" data-slider-control="#testimonials-slider-1512324" data-slider-dir="next">
-                    <i class="ti-angle-right"></i>
-                </button>
-            </div>
-        </div>
-    </section> -->
+    </div>
     <script src="js/bs.js?v=<?= time(); ?>"></script>
     <script src="js/plugins.min.js?v=<?= time(); ?>"></script>
     <script src="js/functions.js?v=<?= time(); ?>"></script>
@@ -225,9 +164,69 @@
         // console.log(companies_id);
     </script>
     <script>
-        $(document).ready(function () {
-            
+        var time_delay_ig;
+        var IntervalTimer;
+
+        $(document).ready(function() {
+            localStorage.setItem("load_ig", "yes");
+            loadTime();
+            loadIG();
+
         });
+
+        function loadTime() {            
+            $.ajax({
+                url: serverUrl + "time_get/" + companies_id,
+                method: "get",
+                success: function(response) {
+                    time_delay_ig = parseInt(response.data.tv_time);             
+                   setInterval(loadIG, time_delay_ig  * 1000);
+                }
+            });
+        }
+
+        
+
+        function loadIG() {
+            if (localStorage.getItem("load_ig") == "yes") {
+                $.ajax({
+                    url: serverUrl + "ig_get/" + companies_id,
+                    method: "get",
+                    success: function(response) {
+                        localStorage.setItem("load_ig", "no");
+                        if ((response.data != null)) {
+                            $('#img_ig').html("<div class='col'>" +
+                                "<div class='box'>" +
+                                "<h2>โต๊ะ " + response.data.table_name + "</h2>" +
+                                "<img src='/uploads/customer_img/" + response.data.src_img + "' >" +
+                                "</div></div>" +
+                                "<div class='col'>" +
+                                "<img src='/img/instragramicon.png'>" +
+                                "<h1> IG : " + response.data.ig + "</h1>" +
+                                "<p>" + response.data.message + "</p>" +
+                                "</div>");
+
+                            $.ajax({
+                                url: serverUrl + "ig_status/" + response.data.id_ig,
+                                method: "get",
+                                success: function(response_update) {
+                                    if (response_update.message = 'success') {
+                                        localStorage.setItem("load_ig", "yes");
+                                        loadTime();
+                                    }
+                                },
+                            });
+
+                        } else {
+                            localStorage.setItem("load_ig", "yes");                           
+                            $('#img_ig').html("");
+                            loadTime();
+                        }
+                    },
+                });
+            }
+
+        }
     </script>
 </body>
 
