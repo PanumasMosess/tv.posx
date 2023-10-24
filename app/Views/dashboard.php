@@ -174,11 +174,13 @@
 
         });
 
-        function loadTime() {            
+        function loadTime() { 
+            clearInterval();           
             $.ajax({
                 url: serverUrl + "time_get/" + companies_id,
                 method: "get",
                 success: function(response) {
+                    time_delay_ig = 0;
                     time_delay_ig = parseInt(response.data.tv_time);             
                    setInterval(loadIG, time_delay_ig  * 1000);
                 }
@@ -212,7 +214,6 @@
                                 success: function(response_update) {
                                     if (response_update.message = 'success') {
                                         localStorage.setItem("load_ig", "yes");
-                                        loadTime();
                                     }
                                 },
                             });
@@ -220,7 +221,6 @@
                         } else {
                             localStorage.setItem("load_ig", "yes");                           
                             $('#img_ig').html("");
-                            loadTime();
                         }
                     },
                 });
