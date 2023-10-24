@@ -174,7 +174,8 @@
 
         });
 
-        function loadTime() {            
+        function loadTime() { 
+            clearInterval();           
             $.ajax({
                 url: serverUrl + "time_get/" + companies_id,
                 method: "get",
