@@ -6,22 +6,23 @@
 }
 
 .col {
-  flex-basis: 50%;
+  flex-basis: 10%;
 }
 
 .col .box {
   position: relative;
-  width: 600px;
-  height: 700px;
+  width: 850px;
+  height: 850px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0,0,0,0.5);
   overflow: hidden;
   border-radius: 20px;
+  margin-right: 50px;
 }
 
-.col .box h2 {
+.col .box h2{
   position: fixed;
   max-width: fit-content;
   font-size: 28px;
@@ -34,11 +35,11 @@
   border-radius: 45px;
   padding: 12px;
   outline: none;
-  font-family: "Mitr", sans-serif;
+  font-family: 'Mitr', sans-serif;
 }
 
 .box::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 300px;
   height: 140%;
@@ -46,7 +47,7 @@
   animation: animate 7s linear infinite;
 }
 .box::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 7px;
   background: #0e153833;
@@ -54,18 +55,18 @@
 }
 @keyframes animate {
   0% {
-    transform: rotate(0deg);
+      transform: rotate(0deg);
   }
   100% {
-    transform: rotate(350deg);
+      transform: rotate(350deg);
   }
 }
 
 .col .box img {
   box-sizing: border-box;
   position: relative;
-  width: 550px;
-  height: 650px;
+  width: 800px;
+  height: 800px;
   object-fit: cover;
   outline: none;
   border: none;
@@ -79,27 +80,27 @@
   width: 155px;
 }
 
-.col h1 {
+.col h1{
   color: #000;
   max-width: fit-content;
-  font-size: 42px;
+  font-size: 60px;
   background-color: goldenrod;
   border: 0;
   border-radius: 10px;
   outline: none;
   padding: 14px;
   margin: 35px 0px;
-  font-family: "Maven Pro", sans-serif;
+  font-family: 'Maven Pro', sans-serif;
 }
 
-.col p {
+.col p{
   color: #fff;
   max-width: fit-content;
-  font-size: 38px;
+  font-size: 56px;
   background-color: #000;
   border: 0;
   border-radius: 10px;
   outline: none;
   padding: 12px;
-  font-family: "Mitr", sans-serif;
+  font-family: 'Mitr', sans-serif;
 }
