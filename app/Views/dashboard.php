@@ -17,7 +17,7 @@
     <!-- <link rel="apple-touch-icon" href="images/apple-touch-icon.png"> -->
     <link rel="stylesheet" href="css/plugins.min.css">
     <link rel="stylesheet" href="css/style.css?v=2.0">
-    <link rel="stylesheet" href="css/styletv.css">
+    <link rel="stylesheet" href="css/styletv.css?v=<?= time(); ?>">
     <script>
         var serverUrl = '<?php echo base_url(); ?>'
         var companies_id = '<?php echo $_GET['compa'] ?? '0'; ?>';
