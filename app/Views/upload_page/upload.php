@@ -16,6 +16,16 @@
     <script>
         var serverUrl = '<?php echo base_url(); ?>';
     </script>
+    <style>
+        .row>* {
+            padding-right: 0;
+        }
+
+        .card {
+            --bs-card-bg: rgb(255 255 255 / 5%);
+            /* สีจางที่ความเข้มลงเหลือ 5% */
+        }
+    </style>
 </head>
 
 <body class="bg-dark4">
@@ -29,50 +39,26 @@
     <section id="contact" class="py-100">
         <div class="container">
             <div class="row">
-                <div class="col-12 d-flex flex-column align-items-center t-center">
-                    <h2 class="fs-60 fs-40-sm uppercase white font-secondary">กรุณาใส่ข้อมูลเพื่อขึ้นจอให้กับคุณ</h2>
+                <!-- <div class="col-12 d-flex flex-column align-items-center t-center">
+                    <h2 class="fs-60 fs-40-sm uppercase white font-secondary">กรุณาเลือกประเภทข้อมูล</h2>
                     <div class="width-70 height-1 my-20 bg-gray4"></div>
-                </div>
-                <div id="contact-form-container" class="col-12 mt-10 d-flex fullwidth flex-column align-items-center slow-cubic">
-                    <div class="contact-form-wrapper o-hidden fullwidth slow-cubic">
-                        <form id="tv_form" class="contact-form validate-me" novalidate="" name="tv_form" method="post">
-                            <div class="container-fluid px-0">
-                                <div class="col-lg-12 col-12 relative">
-                                    <main class="page">
-                                        <div class="box">
-                                            <div class="col-12 mt-15 d-flex text-center justify-content-center bg-colored-hover-upload">
-                                                <label for="file-input" class="block b-1 b-dark fullwidth font-secondary uppercase bg-dark2 bg-colored-hover-upload py-25 gray5 white-hover fs-17 slow"><i class="ti-upload"></i>&nbsp; &nbsp; เพิ่มรูปของคุณ</label>
-                                            </div>
-                                            <input type="file" id="file-input" accept="image/png, image/gif, image/jpeg" placeholder="เลือกรูปภาพ" style="display:none;">
-                                        </div>
-                                        <div class="box-2">
-                                            <div class="result"></div>
-                                        </div>
-                                        <div class="box-2 img-result hide">
-                                            <img class="cropped" src="" alt="">
-                                        </div>
-                                        <div class="box text-center">
-                                            <div class="options hide">
-                                                <label> Width</label>
-                                                <input type="number" class="img-w" value="400" min="100" max="1200" />
-                                            </div>
-                                            <button class="btn save hide">บันทึกขนาดรูป</button>
-                                        </div>
-                                    </main>
-                                </div>
+                </div> -->
+                <div class="row" style="justify-content: center;">
+                    <div class="col-md-4 col-6">
+                        <a href="<?php echo base_url('/upload_img/'.service('uri')->getSegment(2).'/'.service('uri')->getSegment(3)); ?>">
+                            <div class="card mb-3 widget-chart" style="height: auto;">
+                                <img src="<?php echo base_url('img/img.png'); ?>" alt="รูปภาพ" style="width: 70%; height: 70%;align-self: center;">
+                                <span style="text-align: center;color: white; font-size: 24px;padding-top: 5px;padding-bottom: 10px;">ส่งรูปขึ้นจอ</span>
                             </div>
-                            <div class="row row-eq-height">
-                                <div class="col-lg-12 col-12 relative">
-                                    <div class="bg"></div>
-                                    <input type="text" name="text_ig" id="text_ig" placeholder="         ชื่อ IG ของคุณ" required class="py-25 px-25 b-dark fs-18 bg-dark2 white gray-placeholder mt-20 img-ig" />
-                                    <div class="invalid-tooltip top-3 mt-0 bg-transparent p-0 text-danger fs-16 font-main">กรุณาเพิ่มไอจีของคุณ.</div>
-                                </div>
-                                <div class="col-lg-12 col-12 relative pt-30"><textarea name="message" id="message" placeholder="เพิ่มข้อความ" class="py-25 px-25 b-dark fs-18 bg-dark2 white gray-placeholder mnh-150 fullheight"></textarea>
-                                    <div class="invalid-tooltip top-3 mt-0 bg-transparent p-0 text-danger fs-16 font-main"></div>
-                                </div>
-                                <div class="col-12 mt-30 d-flex justify-content-lg-end justify-content-center"><button type="submit" id="submit" class="xl-btn block b-1 b-dark fullwidth font-secondary uppercase bg-dark2 bg-colored-hover py-25 gray5 white-hover fs-17 slow">สร้างข้อความ</button></div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <a href="<?php echo base_url('/upload_video/'.service('uri')->getSegment(2).'/'.service('uri')->getSegment(3)); ?>">
+                            <div class="card mb-3 widget-chart" style="height: auto;">
+                                <img src="<?php echo base_url('img/video.png'); ?>" alt="รูปภาพ" style="width: 70%; height: 70%;align-self: center;">
+                                <span style="text-align: center;color: white; font-size: 24px;padding-top: 5px;padding-bottom: 10px;">ส่งวีดีโอขึ้นจอ</span>
                             </div>
-                        </form>
+                        </a>
                     </div>
                 </div>
             </div>
