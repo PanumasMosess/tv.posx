@@ -104,10 +104,4 @@ class UploadController extends BaseController
             //  ว่าง
         }
     }
-
-    
-    public function upload_video()
-    {
-        return view('upload_page/upload_video');
-    }
 }
