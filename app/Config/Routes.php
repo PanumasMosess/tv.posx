@@ -13,5 +13,4 @@ $routes->get('/time_get/(:any)', 'DashBoardController::IG_TIME/$1');
 $routes->get('/upload/(:any)', 'UploadController::index/$1');
 $routes->get('/upload_video/(:any)', 'UploadController::upload_video/$1');
 $routes->get('/upload_img/(:any)', 'UploadController::upload_img/$1');
-$routes->get('/upload_video/(:any)', 'UploadController::upload_video/$1');
 $routes->post('/upload_customer', 'UploadController::inert_message');
