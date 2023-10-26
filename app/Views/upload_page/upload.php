@@ -47,7 +47,7 @@
                     <div class="col-md-4 col-6">
                         <a href="<?php echo base_url('/upload_img/'.service('uri')->getSegment(2).'/'.service('uri')->getSegment(3)); ?>">
                             <div class="card mb-3 widget-chart" style="height: auto;">
-                                <img src="<?php echo base_url('img/img.png'); ?>" alt="รูปภาพ" style="width: 70%; height: 70%;align-self: center;">
+                                <img src="<?php echo base_url('img/img.png'); ?>" alt="รูปภาพ" style="width: 80%; height: 80%;align-self: center;">
                                 <span style="text-align: center;color: white; font-size: 24px;padding-top: 5px;padding-bottom: 10px;">ส่งรูปขึ้นจอ</span>
                             </div>
                         </a>
@@ -55,7 +55,7 @@
                     <div class="col-md-4 col-6">
                         <a href="<?php echo base_url('/upload_video/'.service('uri')->getSegment(2).'/'.service('uri')->getSegment(3)); ?>">
                             <div class="card mb-3 widget-chart" style="height: auto;">
-                                <img src="<?php echo base_url('img/video.png'); ?>" alt="รูปภาพ" style="width: 70%; height: 70%;align-self: center;">
+                                <img src="<?php echo base_url('img/video.png'); ?>" alt="รูปภาพ" style="width: 80%; height: 80%;align-self: center;">
                                 <span style="text-align: center;color: white; font-size: 24px;padding-top: 5px;padding-bottom: 10px;">ส่งวีดีโอขึ้นจอ</span>
                             </div>
                         </a>
