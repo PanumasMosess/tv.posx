@@ -70,7 +70,7 @@ $("#tv_form").submit(function (e) {
   var message_ = $("#message").val();
 
   var main_host = window.location.pathname;
-  let searchParams_ = main_host.split("/upload/");
+  let searchParams_ = main_host.split("/upload_img/");
   let arr_table_compa = searchParams_[1].split("/");
 
   if (ig_ != "" && img_64bit != "") {

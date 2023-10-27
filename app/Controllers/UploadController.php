@@ -56,6 +56,10 @@ class UploadController extends BaseController
                 $type = $new_file[0];
                 $type_real = explode("/", $type);
 
+                if ($type_real[1] == "quicktime") {
+                    $type_real[1] = 'mov';
+                }
+
                 // var_dump($new_file_move[1]);
                 // exit;
 
@@ -105,6 +109,7 @@ class UploadController extends BaseController
         }
     }
 
+
     public function upload_img()
     {
         return view('upload_page/upload_img');
@@ -112,6 +117,6 @@ class UploadController extends BaseController
 
     public function upload_video()
     {
-        return view('upload_page/upload_img');
+        return view('upload_page/upload_video');
     }
 }
