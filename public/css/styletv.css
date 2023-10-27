@@ -67,7 +67,7 @@
   position: relative;
   width: 800px;
   height: 800px;
-  object-fit: cover;
+  /* object-fit: cover; */
   outline: none;
   border: none;
   z-index: 10;
@@ -78,7 +78,7 @@
   position: relative;
   width: 800px;
   height: 800px;
-  object-fit: cover;
+  /* object-fit: cover; */
   outline: none;
   border: none;
   z-index: 10;
