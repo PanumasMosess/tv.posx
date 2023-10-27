@@ -790,13 +790,13 @@ $($grid).each(function () {
                         r.classList.add("none");
                     }, 700);
                 }
-                var l = this;
-                fetch(l.getAttribute("action"), {
-                  method: l.getAttribute("method"),
-                  body: new FormData(l),
-                })
-                  .then((e) => e.text())
-                  .then(function (e) {}),
+                // var l = this;
+                // fetch(l.getAttribute("action"), {
+                //   method: l.getAttribute("method"),
+                //   body: new FormData(l),
+                // })
+                //   .then((e) => e.text())
+                //   .then(function (e) {}),
                   t.preventDefault();
               } else e.classList.add("no-valid"), e.querySelector("[required]:invalid").focus(), t.preventDefault(), t.stopPropagation();
               e.classList.add("was-validated");
