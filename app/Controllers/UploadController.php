@@ -5,6 +5,7 @@ namespace App\Controllers;
 date_default_timezone_set('Asia/Jakarta');
 
 use App\Controllers\BaseController;
+use Aws\S3\S3Client;
 
 class UploadController extends BaseController
 {
@@ -14,6 +15,13 @@ class UploadController extends BaseController
     {
         // Model
         $this->UploadModel = new \App\Models\UploadModel();
+
+        $this->s3_bucket = getenv('S3_BUCKET');
+        $this->s3_secret_key = getenv('SECRET_KEY');
+        $this->s3_key = getenv('KEY');
+        $this->s3_endpoint = getenv('ENDPOINT');
+        $this->s3_region = getenv('REGION');
+        $this->s3_cdn_img = getenv('CDN_IMG');
     }
 
     public function index()
@@ -67,8 +75,31 @@ class UploadController extends BaseController
                     // exit;
 
                     $file_name = $upload_running_code . '.' . $type_real[1];
+                    $file_Path_re = 'uploads/customer_img/' . $upload_running_code . '.' . $type_real[1];
 
                     file_put_contents('uploads/customer_img/' . $upload_running_code . '.' . $type_real[1], base64_decode($new_file_move[1]));
+
+                    $s3Client = new S3Client([
+                        'version' => 'latest',
+                        'region'  => $this->s3_region,
+                        'endpoint' => $this->s3_endpoint,
+                        'use_path_style_endpoint' => false,
+                        'credentials' => [
+                            'key'    => $this->s3_key,
+                            'secret' => $this->s3_secret_key
+                        ]
+                    ]);
+
+                    $result_re = $s3Client->putObject([
+                        'Bucket' => $this->s3_bucket,
+                        'Key'    => 'uploads/customer_img/' . $file_name,
+                        'Body'   => fopen($file_Path_re, 'r'),
+                        'ACL'    => 'public-read', // make file 'public'
+                    ]);
+
+                    if ($result_re['ObjectURL'] != "") {
+                        unlink('uploads/customer_img/' . $file_name);
+                    }
                 }
 
 
@@ -111,7 +142,7 @@ class UploadController extends BaseController
                 //  ว่าง
             }
         } catch (\Throwable $th) {
-             print_r($th->getMessage());
+            print_r($th->getMessage());
         }
     }
 
