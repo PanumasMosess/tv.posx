@@ -35,7 +35,7 @@
                 </div>
                 <div id="contact-form-container" class="col-12 mt-10 d-flex fullwidth flex-column align-items-center slow-cubic">
                     <div class="contact-form-wrapper o-hidden fullwidth slow-cubic">
-                        <form id="tv_form" class="contact-form validate-me" novalidate="" name="tv_form" method="post">
+                        <form id="tv_form" class="contact-form validate-me" novalidate="" name="tv_form" >
                             <div class="container-fluid px-0">
                                 <div class="col-lg-12 col-12 relative">
                                     <main class="page">
