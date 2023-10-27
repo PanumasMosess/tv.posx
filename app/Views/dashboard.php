@@ -197,17 +197,36 @@
                     success: function(response) {
                         localStorage.setItem("load_ig", "no");
                         if ((response.data != null)) {
-                            let timer = 0;
-                            $('#img_ig').html("<div class='col'>" +
-                                "<div class='box'>" +
-                                "<h2>โต๊ะ " + response.data.table_name + "</h2>" +
-                                "<img src='/uploads/customer_img/" + response.data.src_img + "' >" +
-                                "</div></div>" +
-                                "<div class='col'>" +
-                                "<img src='/img/instragramicon.png'>" +
-                                "<h1> IG : " + response.data.ig + "</h1>" +
-                                "<p>" + response.data.message + "</p>" +
-                                "</div>");
+                            let link = response.data.src_img;
+                            let type = link.split(".");
+                            if (type[1] == 'mov' || type[1] == 'mp4' || type[1] == 'ogg' || type[1] == 'webm') {
+                                if (type[1] == 'mov') {
+                                    type[1] = 'quicktime';
+                                }
+                                $('#img_ig').html("<div class='col'>" +
+                                    "<div class='box'>" +
+                                    "<h2>โต๊ะ " + response.data.table_name + "</h2>" +
+                                    "<video  autoplay='autoplay' muted>" +
+                                    "<source src='/uploads/customer_img/" + response.data.src_img + "' type='video/mp4' />" +
+                                    "</video></div></div>" +
+                                    "<div class='col'>" +
+                                    "<img src='/img/instragramicon.png'>" +
+                                    "<h1> IG : " + response.data.ig + "</h1>" +
+                                    "<p>" + response.data.message + "</p>" +
+                                    "</div>");
+                            } else {
+                                $('#img_ig').html("<div class='col'>" +
+                                    "<div class='box'>" +
+                                    "<h2>โต๊ะ " + response.data.table_name + "</h2>" +
+                                    "<img src='/uploads/customer_img/" + response.data.src_img + "' >" +
+                                    "</div></div>" +
+                                    "<div class='col'>" +
+                                    "<img src='/img/instragramicon.png'>" +
+                                    "<h1> IG : " + response.data.ig + "</h1>" +
+                                    "<p>" + response.data.message + "</p>" +
+                                    "</div>");
+                            }
+
                             timer = time_delay_ig;
                             var intervalUpdate = setInterval(function() {
                                 timer--;
