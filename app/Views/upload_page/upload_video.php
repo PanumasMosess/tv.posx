@@ -30,7 +30,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 d-flex flex-column align-items-center t-center">
-                    <h2 class="fs-60 fs-40-sm uppercase white font-secondary">กรุณาใส่ข้อมูลเพื่อขึ้นจอให้กับคุณ</h2>
+                    <h2 class="fs-60 fs-40-sm uppercase white font-secondary">กรุณาเพิ่มข้อมูลเพื่อขึ้นจอให้กับคุณ</h2>
                     <div class="width-70 height-1 my-20 bg-gray4"></div>
                 </div>
                 <div id="contact-form-container" class="col-12 mt-10 d-flex fullwidth flex-column align-items-center slow-cubic">
@@ -41,23 +41,18 @@
                                     <main class="page">
                                         <div class="box">
                                             <div class="col-12 mt-15 d-flex text-center justify-content-center bg-colored-hover-upload">
-                                                <label for="file-input" class="block b-1 b-dark fullwidth font-secondary uppercase bg-dark2 bg-colored-hover-upload py-25 gray5 white-hover fs-17 slow"><i class="ti-upload"></i>&nbsp; &nbsp; เพิ่มรูปของคุณ</label>
+                                                <label for="file-input" class="block b-1 b-dark fullwidth font-secondary uppercase bg-dark2 bg-colored-hover-upload py-25 gray5 white-hover fs-17 slow"><i class="ti-upload"></i>&nbsp; &nbsp; เพิ่มวีดีโอไม่เกิน 30 วินาที (30 MB)</label>
                                             </div>
-                                            <input type="file" id="file-input" accept="image/png, image/gif, image/jpeg" placeholder="เลือกรูปภาพ" style="display:none;">
+                                            <input type="file" class="file-input" id="file-input" accept="video/mp4, video/ogg, video/webm, video/quicktime" placeholder="เลือกรูปภาพ" style="display:none;" onchange="checkFileDuration()">
                                         </div>
                                         <div class="box-2">
-                                            <div class="result"></div>
-                                        </div>
-                                        <div class="box-2 img-result hide">
-                                            <img class="cropped" src="" alt="">
-                                        </div>
-                                        <div class="box text-center">
-                                            <div class="options hide">
-                                                <label> Width</label>
-                                                <input type="number" class="img-w" value="400" min="100" max="1200" />
+                                            <pre id="infos" style="display:none"></pre>
+                                            <div id="pross" style="display:none">
+                                                <p>กำลังเพิ่ม</p>
+                                                <img src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif" width="50" />
                                             </div>
-                                            <button class="btn save hide">บันทึกขนาดรูป</button>
                                         </div>
+
                                     </main>
                                 </div>
                             </div>
@@ -82,8 +77,7 @@
     <script src="<?php echo base_url('js/bs.js?v=' . time()); ?>"></script>
     <script src="<?php echo base_url('js/plugins.min.js?v=' . time()); ?>"></script>
     <script src="<?php echo base_url('js/functions.js?v=' . time()); ?>"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.js'></script>
-    <script src="<?php echo base_url('js/script_imge.js?v=' . time()); ?>"></script>
+    <script src="<?php echo base_url('js/script_video.js?v=' . time()); ?>"></script>
 </body>
 
 </html>
