@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/styletv.css?v=<?= time(); ?>">
     <script>
         var serverUrl = '<?php echo base_url(); ?>'
+        var CDN_IMG = '<?php echo getenv('CDN_IMG'); ?>'
         var companies_id = '<?php echo $_GET['compa'] ?? '0'; ?>';
     </script>
 </head>
@@ -207,7 +208,7 @@
                                     "<div class='box'>" +
                                     "<h2>โต๊ะ " + response.data.table_name + "</h2>" +
                                     "<video  autoplay='autoplay' muted>" +
-                                    "<source src='/uploads/customer_img/" + response.data.src_img + "' type='video/mp4' />" +
+                                    "<source src='" + CDN_IMG + "/uploads/customer_img/" + response.data.src_img + "' type='video/mp4' />" +
                                     "</video></div></div>" +
                                     "<div class='col'>" +
                                     "<img src='/img/instragramicon.png'>" +
@@ -218,7 +219,7 @@
                                 $('#img_ig').html("<div class='col'>" +
                                     "<div class='box'>" +
                                     "<h2>โต๊ะ " + response.data.table_name + "</h2>" +
-                                    "<img src='/uploads/customer_img/" + response.data.src_img + "' >" +
+                                    "<img src='" + CDN_IMG + "/uploads/customer_img/" + response.data.src_img + "' >" +
                                     "</div></div>" +
                                     "<div class='col'>" +
                                     "<img src='/img/instragramicon.png'>" +
