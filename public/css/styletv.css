@@ -67,6 +67,8 @@
   position: relative;
   width: 800px;
   height: 800px;
+  /* height: auto; */
+  max-width: 100%;
   /* object-fit: cover; */
   outline: none;
   border: none;
