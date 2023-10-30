@@ -69,7 +69,7 @@
   height: 800px;
   /* height: auto; */
   max-width: 100%;
-  /* object-fit: cover; */
+  object-fit: contain;
   outline: none;
   border: none;
   z-index: 10;
