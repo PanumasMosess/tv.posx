@@ -39,11 +39,7 @@
     <section id="contact" class="py-70">
         <div class="container">
             <div class="row">
-                <!-- <div class="col-12 d-flex flex-column align-items-center t-center">
-                    <h2 class="fs-60 fs-40-sm uppercase white font-secondary">กรุณาเลือกประเภทข้อมูล</h2>
-                    <div class="width-70 height-1 my-20 bg-gray4"></div>
-                </div> -->
-                <div class="row" style="margin-bottom: 10px;justify-content: center;">
+                <!-- <div class="row" style="margin-bottom: 10px;justify-content: center;">
                     <div class="col-md-4 col-6">
                         <a href="<?php echo 'https://mobile-posx.posx.co/'.service('uri')->getSegment(2).'/'.service('uri')->getSegment(3); ?>">
                             <div class="card mb-3 widget-chart" style="height: auto;">
@@ -52,7 +48,7 @@
                             </div>
                         </a>
                     </div>
-                </div>
+                </div> -->
                 <div class="row" style="justify-content: center;">
                     <div class="col-md-4 col-6">
                         <a href="<?php echo base_url('/upload_img/'.service('uri')->getSegment(2).'/'.service('uri')->getSegment(3)); ?>">
