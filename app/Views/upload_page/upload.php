@@ -41,7 +41,7 @@
             <div class="row">
                 <!-- <div class="row" style="margin-bottom: 10px;justify-content: center;">
                     <div class="col-md-4 col-6">
-                        <a href="<?php echo 'https://mobile-posx.posx.co/'.service('uri')->getSegment(2).'/'.service('uri')->getSegment(3); ?>">
+                        <a href="<?php echo 'https://mobile-posx.posx.co/home/'.service('uri')->getSegment(2).'###'.service('uri')->getSegment(3); ?>">
                             <div class="card mb-3 widget-chart" style="height: auto;">
                                 <img src="<?php echo base_url('img/menu.png'); ?>" alt="รูปภาพ" style="width: 80%; height: 80%;align-self: center;">
                                 <span style="text-align: center;color: white; font-size: 24px;padding-top: 5px;padding-bottom: 10px;">เมนู</span>
