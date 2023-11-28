@@ -39,7 +39,7 @@
     <section id="contact" class="py-70">
         <div class="container">
             <div class="row">
-                <!-- <div class="row" style="margin-bottom: 10px;justify-content: center;">
+                <div class="row" style="margin-bottom: 10px;justify-content: center;">
                     <div class="col-md-4 col-6">
                         <a href="<?php echo 'https://mobile-posx.posx.co/home/'.service('uri')->getSegment(2).'_'.service('uri')->getSegment(3); ?>">
                             <div class="card mb-3 widget-chart" style="height: auto;">
@@ -48,7 +48,7 @@
                             </div>
                         </a>
                     </div>
-                </div> -->
+                </div>
                 <div class="row" style="justify-content: center;">
                     <div class="col-md-4 col-6">
                         <a href="<?php echo base_url('/upload_img/'.service('uri')->getSegment(2).'/'.service('uri')->getSegment(3)); ?>">
