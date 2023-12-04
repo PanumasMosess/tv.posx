@@ -38,7 +38,7 @@ class UploadController extends BaseController
             $datas = $_POST["data"];
             $count_cycle = 0;
 
-            // var_dump($datas);
+            var_dump($datas);
             // exit;
 
             $check_arr_count = count($datas);
@@ -78,7 +78,7 @@ class UploadController extends BaseController
                     $file_Path_re = 'uploads/customer_img/' . $upload_running_code . '.' . $type_real[1];
 
                     file_put_contents('uploads/customer_img/' . $upload_running_code . '.' . $type_real[1], base64_decode($new_file_move[1]));
-
+              
                     $s3Client = new S3Client([
                         'version' => 'latest',
                         'region'  => $this->s3_region,
