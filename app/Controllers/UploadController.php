@@ -125,7 +125,7 @@ class UploadController extends BaseController
                     $count_cycle++;
                 } else {
                     return $this->response->setJSON([
-                        'status' => 200,
+                        'status' => 404,
                         'error' => true,
                         'message' => 'Faild'
                     ]);
@@ -143,8 +143,8 @@ class UploadController extends BaseController
             }
         } catch (\Throwable $th) {
             return $this->response->setJSON([
-                'status' => 200,
-                'error' => false,
+                'status' => 404,
+                'error' => true,
                 'message' => $th->getMessage()
             ]);
         }
