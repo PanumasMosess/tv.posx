@@ -142,7 +142,11 @@ class UploadController extends BaseController
                 //  ว่าง
             }
         } catch (\Throwable $th) {
-            print_r($th->getMessage());
+            return $this->response->setJSON([
+                'status' => 200,
+                'error' => false,
+                'message' => $th->getMessage()
+            ]);
         }
     }
 
