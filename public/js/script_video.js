@@ -134,6 +134,7 @@ $("#tv_form").submit(function (e) {
         } else {
           resetForm();
           $("#pross").hide();
+          console.log(response.message);
         }
       },
     });
