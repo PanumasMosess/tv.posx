@@ -38,7 +38,7 @@ class UploadController extends BaseController
             $datas = $_POST["data"];
             $count_cycle = 0;
 
-            var_dump($datas);
+            // var_dump($datas);
             // exit;
 
             $check_arr_count = count($datas);
