@@ -207,7 +207,7 @@
                                 $('#img_ig').html("<div class='col'>" +
                                     "<div class='box'>" +
                                     "<h2>โต๊ะ " + response.data.table_name + "</h2>" +
-                                    "<video  autoplay='autoplay' muted>" +
+                                    "<video  autoplay='autoplay' muted loop>" +
                                     "<source src='" + CDN_IMG + "/uploads/customer_img/" + response.data.src_img + "' type='video/mp4' />" +
                                     "</video></div></div>" +
                                     "<div class='col'>" +
